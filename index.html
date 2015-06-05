@@ -6,8 +6,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Selectionator is an asset for the Unity framework that provides sweetened and unsweetened weighted selections" content="">
-    <meta name="Evil Wizard Studios" content="">
+	<meta property="og:site_name" content="Selectionator"/>
+	<meta property="og:title" content="Selectionator, from Evil Wizard Studios"/>
+	<meta property="og:type"   content="website"/>
+	<meta property="og:description" content="Selectionator is an asset for the Unity framework that provides sweetened and unsweetened weighted selections."/>
+	<meta property="og:image" content="http://evilwizards.com/selectionator/img/ico/icon_lg.png"/>
+	<meta property="og:url"content="http://evilwizards.com/selectionator"/>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+	<link rel="manifest" href="img/ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 
     <title>Selectionator</title>
 
@@ -200,13 +222,14 @@ var bonusMultiSelection = mySelector.Multiple(MySelectableCollection, 5, 50);
 	// returns an IEnumerable&lt;MyClass&gt; with 5 items, using a selection bonus of 50.
 </pre> 
 
-The dictionary is used <a href="webdemo/index.html" target="_blank">in the Demo</a> to get the selection probabilities of the items.
+
 					<p><br>
 					<br>
 					<p class="lead">
 					Selectionator contains an additional useful function: <code>GetWeightDictionary</code><br>
 					This function takes a collection of selectable objects and a bonus value, and returns a <code>Dictionary&lt;T, float&gt;</code>, where T is the type of the collection. The dictionary values represent the selection weights of the items after the bonus has been applied.
 					<pre> var myWeightDictionary = mySelector.GetWeightDictionary(MySelectableCollection, 10);</pre>
+					The dictionary is used <a href="webdemo/index.html" target="_blank">in the Demo</a> to get the selection probabilities of the items.
 					</p>
 					<br><br><br>
 					<a name="docs_examples"></a>
@@ -293,7 +316,7 @@ The dictionary is used <a href="webdemo/index.html" target="_blank">in the Demo<
 							<i class="fa">&#xf0da;</i>&nbsp;&nbsp;A gem, of selection weight 0.1<br>
 							<i class="fa">&#xf0da;</i>&nbsp;&nbsp;A ring, of selection weight 0.001<br>
 							A mean pivot selector jumps the ring to a 0.3% drop chance at a bonus value of only 1, and by bonus=50 the ring has over a 9% chance to drop! The table is just too swingy to use a mean pivot here. A median pivot, on the other hand, keeps the ring extremely rare.<br>
-							However, a median pivot might keep the ring <i>too</i> rare for players with (potentially) bonus values in the hundreds or thousands. In these cases, it might be best to break up the drop tables. Execute a median-pivot selection on a list of potential drop tables (just have your tables themselves implement <code>ISelectable</code>), then execute a mean-pivot selection on the selected table. In this way, you can fine-tune drop rates even in situations where selections can be executed over hugely variant weights.
+							However, a median pivot might keep the ring <i>too</i> rare if players can get bonus values in the hundreds or thousands. In these cases, it might be best to break up the drop tables. Execute a median-pivot selection on a list of potential drop tables (just have your tables themselves implement <code>ISelectable</code>), then execute a mean-pivot selection on the selected table. In this way, you can fine-tune drop rates even in situations where selections can be executed over hugely variant weights.
 						</div>
 						<br>
 						</p>
