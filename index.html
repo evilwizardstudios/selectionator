@@ -186,14 +186,9 @@
 <pre>
 public class MyClass : ISelectable
 {
-        public float GetSelectionWeight()
-		{
-			return _selectionWeight;
-		}
-	private float _selectionWeight;
-        public float AdjustedSelectionWeight { get; set; }
+        public float SelectionWeight { get; set; }
 }</pre>
-					GetSelectionWeight() is what the Selector calls internally, and the weight it returns is the object's selection weight. This can come from anywhere, but it must be a float value.
+					SelectionWeight is what the Selector looks at internally, and the weight it returns is the object's selection weight. This can come from anywhere, but it must be a float value.
 					It is recommended that selection weights are set in the class constructor. Items with null selection weights default to weight 0, and will not be selected.	</p>
 					<br><br>
 					
